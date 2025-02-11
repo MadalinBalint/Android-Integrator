@@ -1,0 +1,22 @@
+apply plugin: 'org.jetbrains.kotlinx.kover'
+apply from: '../coverage/coverageExclusions.gradle'
+
+kover {
+    currentProject {
+        createVariant("customDebug") {
+            add(["debug"], false)
+        }
+        createVariant("customRelease") {
+            add(["release"], false)
+        }
+    }
+    reports {
+        filters {
+            excludes {
+                classes(excludedClasses)
+                packages(excludedPackages)
+                annotatedBy("*Composable*", "*Parcelize*")
+            }
+        }
+    }
+}

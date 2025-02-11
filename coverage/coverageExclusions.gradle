@@ -1,0 +1,27 @@
+ext.excludedClasses = [
+        '*.BuildConfig',
+        '*.*Activity',
+        '*.*Dagger*',
+        '*.*Hilt*',
+        '*.di.*',
+        // Apollo GraphQL
+        '*.graphql.*',
+        '*.type.*',
+        '*.selections.*',
+        '*.adapter.*',
+        '*$Companion*',
+        // Compose
+        '*ComposableSingletons*',
+        '*.navigation.*',
+        "**.*\$\$serializer",
+        '*.*GetCharactersQuery*',
+        '*.*GetEpisodesQuery*',
+        '*.*GetLocationsQuery*',
+]
+
+ext.excludedPackages = [
+]
+
+ext.annotatedBy = [
+        "*Composable*"
+]

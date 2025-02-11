@@ -1,0 +1,36 @@
+apply plugin: 'org.jetbrains.kotlinx.kover'
+apply from: 'coverage/coverageExclusions.gradle'
+
+kover {
+    reports {
+        filters {
+            excludes {
+                classes(excludedClasses)
+                packages(excludedPackages)
+                annotatedBy("*Composable*", "*Parcelize*")
+            }
+        }
+    }
+    currentProject {
+        createVariant("customDebug") {}
+        createVariant("customRelease") {}
+    }
+}
+
+dependencies {
+    kover(project(':analytics-component'))
+    kover(project(':binance-component'))
+    kover(project(':binance-ui'))
+    kover(project(':designsystem'))
+    kover(project(':exchangerate-component'))
+    kover(project(':exchangerate-ui'))
+    kover(project(':home-ui'))
+    kover(project(':remoteconfig-component'))
+    kover(project(':rickandmorty-component'))
+    kover(project(':rickandmorty-ui'))
+    kover(project(':routes'))
+    kover(project(':shared'))
+    kover(project(':tmdb-component'))
+    kover(project(':tmdb-ui'))
+    kover(project(':viewmodel'))
+}
