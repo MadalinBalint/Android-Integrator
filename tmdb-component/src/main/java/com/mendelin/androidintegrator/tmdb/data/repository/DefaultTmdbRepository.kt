@@ -7,7 +7,7 @@ import com.mendelin.androidintegrator.tmdb.domain.model.*
 import com.mendelin.androidintegrator.tmdb.domain.repository.TmdbRepository
 import kotlinx.coroutines.*
 
-class DefaultTmdbRepository(
+internal class DefaultTmdbRepository(
     private val tmdbApi: TmdbApi,
     private val tmdbMapper: TmdbMapper,
     private val ioDispatcher: CoroutineDispatcher

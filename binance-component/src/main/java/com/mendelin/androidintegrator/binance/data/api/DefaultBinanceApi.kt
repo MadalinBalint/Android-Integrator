@@ -8,7 +8,7 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.*
 import kotlinx.serialization.json.Json
 
-class DefaultBinanceApi(private val webSocketClient: HttpClient) : BinanceApi {
+internal class DefaultBinanceApi(private val webSocketClient: HttpClient) : BinanceApi {
    private val BASE_URL = "wss://stream.binance.com:9443/ws"
 
     override fun getAveragePrice(

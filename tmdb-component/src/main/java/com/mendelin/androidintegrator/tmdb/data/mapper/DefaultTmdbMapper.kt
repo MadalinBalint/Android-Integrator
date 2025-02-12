@@ -3,7 +3,7 @@ package com.mendelin.androidintegrator.tmdb.data.mapper
 import com.mendelin.androidintegrator.tmdb.data.model.*
 import com.mendelin.androidintegrator.tmdb.domain.model.*
 
-class DefaultTmdbMapper : TmdbMapper {
+internal class DefaultTmdbMapper : TmdbMapper {
     override fun transform(dto: MovieGenreDto): MovieGenre {
         return MovieGenre(
             genres = dto.genres.map(::transform)

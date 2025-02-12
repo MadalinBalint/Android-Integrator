@@ -4,7 +4,7 @@ import androidx.paging.*
 import com.mendelin.androidintegrator.rickandmorty.domain.model.Character
 import com.mendelin.androidintegrator.rickandmorty.domain.usecase.GetCharacters
 
-class RamCharactersPagingSource(
+internal class RamCharactersPagingSource(
     private val getCharacters: GetCharacters,
 ) : PagingSource<Int, Character>() {
     override fun getRefreshKey(state: PagingState<Int, Character>): Int? {

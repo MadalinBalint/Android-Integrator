@@ -8,7 +8,7 @@ import com.mendelin.androidintegrator.rickandmorty.domain.repository.RickAndMort
 import com.mendelin.androidintegrator.shared.*
 import kotlinx.coroutines.*
 
-class DefaultRickAndMortyRepository(
+internal class DefaultRickAndMortyRepository(
     private val apolloClient: ApolloClient,
     private val ramMapper: RickAndMortyMapper,
     private val ioDispatcher: CoroutineDispatcher

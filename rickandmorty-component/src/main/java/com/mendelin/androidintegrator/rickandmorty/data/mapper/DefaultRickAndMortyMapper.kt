@@ -3,7 +3,7 @@ package com.mendelin.androidintegrator.rickandmorty.data.mapper
 import com.mendelin.androidintegrator.*
 import com.mendelin.androidintegrator.rickandmorty.domain.model.*
 
-class DefaultRickAndMortyMapper : RickAndMortyMapper {
+internal class DefaultRickAndMortyMapper : RickAndMortyMapper {
     override fun transform(dto: GetCharactersQuery.Info): Info {
         return Info(
             count = dto.count ?: 0,

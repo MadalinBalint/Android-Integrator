@@ -5,7 +5,7 @@ import com.mendelin.androidintegrator.remoteconfig.domain.repository.RemoteConfi
 import com.mendelin.androidintegrator.shared.AiResult
 import kotlinx.coroutines.flow.*
 
-class DefaultRemoteConfigRepository(
+internal class DefaultRemoteConfigRepository(
     private val remoteConfigClient: RemoteConfigClient
 ) : RemoteConfigRepository {
     override suspend fun fetchRemoteConfiguration(): AiResult<Unit, Unit> {

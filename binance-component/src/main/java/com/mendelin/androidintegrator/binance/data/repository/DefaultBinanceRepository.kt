@@ -7,7 +7,7 @@ import com.mendelin.androidintegrator.binance.domain.repository.BinanceRepositor
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.*
 
-class DefaultBinanceRepository(
+internal class DefaultBinanceRepository(
     private val binanceApi: BinanceApi,
     private val binanceMapper: BinanceMapper,
     private val ioDispatcher: CoroutineDispatcher

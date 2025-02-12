@@ -5,7 +5,7 @@ import com.mendelin.androidintegrator.tmdb.data.model.*
 import io.ktor.client.HttpClient
 import io.ktor.client.request.*
 
-class DefaultTmdbApi(private val httpClient: HttpClient) : TmdbApi {
+internal class DefaultTmdbApi(private val httpClient: HttpClient) : TmdbApi {
     override suspend fun getMovieGenres(): AiResult<MovieGenreDto, String> =
         ktorResponse {
             httpClient.get("$BASE_URL$MOVIE_GENRES_URL")

@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 
-class FirebaseRemoteConfigClient : RemoteConfigClient {
+internal class FirebaseRemoteConfigClient : RemoteConfigClient {
     private val remoteConfig: FirebaseRemoteConfig
         get() = Firebase.remoteConfig
     private val remoteConfigUpdates = MutableStateFlow(emptySet<String>())

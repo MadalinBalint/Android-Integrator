@@ -7,7 +7,7 @@ import com.mendelin.androidintegrator.exchangerate.domain.repository.ExchangeRat
 import com.mendelin.androidintegrator.shared.AiResult
 import kotlinx.coroutines.*
 
-class DefaultExchangeRateRepository(
+internal class DefaultExchangeRateRepository(
     private val exchangeRateApi: ExchangeRateApi,
     private val exchangeRateMapper: ExchangeRateMapper,
     private val ioDispatcher: CoroutineDispatcher

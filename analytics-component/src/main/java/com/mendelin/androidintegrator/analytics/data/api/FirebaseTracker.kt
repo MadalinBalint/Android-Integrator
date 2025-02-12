@@ -5,7 +5,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.analytics.analytics
 import timber.log.Timber
 
-class FirebaseTracker : AnalyticsClient {
+internal class FirebaseTracker : AnalyticsClient {
     private val firebaseAnalytics = Firebase.analytics
 
     override fun track(event: String, params: Map<String, Any>) {

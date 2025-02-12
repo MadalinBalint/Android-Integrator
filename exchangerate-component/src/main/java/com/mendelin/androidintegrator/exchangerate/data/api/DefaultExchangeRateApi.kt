@@ -7,7 +7,7 @@ import io.ktor.client.request.*
 import io.ktor.http.*
 import nl.adaptivity.xmlutil.serialization.XML
 
-class DefaultExchangeRateApi(private val httpClient: HttpClient) : ExchangeRateApi {
+internal class DefaultExchangeRateApi(private val httpClient: HttpClient) : ExchangeRateApi {
     private val BASE_URL = "http://infovalutar.ro/curs.asmx?wsdl"
 
     override suspend fun getLatestValue(currency: String): AiResult<GetLatestValueDto, String> {
