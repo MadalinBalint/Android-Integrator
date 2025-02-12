@@ -6,7 +6,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class DefaultBinanceMapperTest {
-    val sut = DefaultBinanceMapper()
+   private val sut = DefaultBinanceMapper()
 
     @Test
     fun `EXPECT CryptoAvgPrice WHEN mapping CryptoAvgPriceDto`() {
