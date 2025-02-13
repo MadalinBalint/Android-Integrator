@@ -9,7 +9,7 @@ class AiResultTest {
     fun `EXPECT success callback on reduce WHEN AiResult is Success`() {
         val sut = AiResult.Success("success")
 
-        val actual = sut.reduce(success = { it }, failure = {})
+        val actual = sut.reduce(onSuccess = { it }, onFailure = {})
 
         assertEquals("success", actual)
     }
@@ -18,7 +18,7 @@ class AiResultTest {
     fun `EXPECT failure callback on reduce WHEN AiResult is Failure`() {
         val sut = AiResult.Failure("failure")
 
-        val actual = sut.reduce(success = {}, failure = { it })
+        val actual = sut.reduce(onSuccess = {}, onFailure = { it })
 
         assertEquals("failure", actual)
     }

@@ -33,11 +33,11 @@ class BinanceViewModel(
     fun getInitialConfig() {
         viewModelScope.launch {
             getBinanceInitialRemoteConfig().reduce(
-                success = {
+                onSuccess = {
                     Timber.d("Initial stablecoin = $it")
                     getResults(it)
                 },
-                failure = {
+                onFailure = {
                     Timber.e("Failed getting initial stablecoin. Defaulting to $DEFAULT_STABLECOIN")
                     getResults(DEFAULT_STABLECOIN)
                 }

@@ -8,10 +8,10 @@ internal class GetBinanceInitialRemoteConfigUseCase(
 ) : GetBinanceInitialRemoteConfig {
     override suspend fun invoke(): AiResult<String, Unit> {
        return remoteConfigRepository.fetchRemoteConfiguration().reduce(
-            success = {
+            onSuccess = {
                 AiResult.Success(remoteConfigRepository.getBinanceStablecoinReference())
             },
-            failure = {
+            onFailure = {
                 AiResult.Failure(Unit)
             }
         )

@@ -16,10 +16,10 @@ internal class DefaultExchangeRateRepository(
         return withContext(ioDispatcher) {
             val response = exchangeRateApi.getLatestValue(currency)
             response.reduce(
-                success = {
+                onSuccess = {
                     AiResult.Success(exchangeRateMapper.transform(it, currency))
                 },
-                failure = {
+                onFailure = {
                     AiResult.Failure(it)
                 }
             )

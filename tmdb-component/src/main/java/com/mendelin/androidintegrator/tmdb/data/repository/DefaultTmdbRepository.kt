@@ -16,10 +16,10 @@ internal class DefaultTmdbRepository(
         return withContext(ioDispatcher) {
             val response = tmdbApi.getMovieGenres()
             response.reduce(
-                success = {
+                onSuccess = {
                     AiResult.Success(tmdbMapper.transform(it).genres)
                 },
-                failure = {
+                onFailure = {
                     AiResult.Failure(it)
                 }
             )
@@ -30,10 +30,10 @@ internal class DefaultTmdbRepository(
         return withContext(ioDispatcher) {
             val response = tmdbApi.getMoviesNowPlaying(page)
             response.reduce(
-                success = {
+                onSuccess = {
                     AiResult.Success(tmdbMapper.transform(it))
                 },
-                failure = {
+                onFailure = {
                     AiResult.Failure(it)
                 }
             )

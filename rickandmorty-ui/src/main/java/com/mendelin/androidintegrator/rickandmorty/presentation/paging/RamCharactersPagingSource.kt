@@ -19,7 +19,7 @@ internal class RamCharactersPagingSource(
 
         return try {
             getCharacters(currentPage).reduce(
-                success = {
+                onSuccess = {
                     val maxPages = it.info.pages
                     LoadResult.Page(
                         data = it.results,
@@ -28,7 +28,7 @@ internal class RamCharactersPagingSource(
                     )
                 },
 
-                failure = {
+                onFailure = {
                     LoadResult.Error(Exception(it))
                 }
             )

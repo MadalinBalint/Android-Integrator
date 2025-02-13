@@ -22,10 +22,10 @@ class TmdbViewModel(
         viewModelScope.launch {
             val movieGenres = getMovieGenres()
             movieGenres.reduce(
-                success = {
+                onSuccess = {
                     genres.updateState { it }
                 },
-                failure = {
+                onFailure = {
                     Timber.d("Error", it)
                 }
             )

@@ -19,7 +19,7 @@ class TmdbMoviesPagingSource(
 
         return try {
             getMoviesNowPlaying(currentPage).reduce(
-                success = {
+                onSuccess = {
                     val maxPages = it.totalPages
                     LoadResult.Page(
                         data = it.results,
@@ -28,7 +28,7 @@ class TmdbMoviesPagingSource(
                     )
                 },
 
-                failure = {
+                onFailure = {
                     LoadResult.Error(Exception(it))
                 }
             )
