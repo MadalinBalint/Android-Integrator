@@ -3,7 +3,7 @@ package com.mendelin.androidintegrator.rickandmorty.data.mapper
 import com.mendelin.androidintegrator.*
 import com.mendelin.androidintegrator.rickandmorty.domain.model.*
 
-interface RickAndMortyMapper {
+internal interface RickAndMortyMapper {
     fun transform(dto: GetCharactersQuery.Info): Info
     fun transform(dto: GetCharactersQuery.Result): Character
     fun transform(dto: GetEpisodesQuery.Info): Info

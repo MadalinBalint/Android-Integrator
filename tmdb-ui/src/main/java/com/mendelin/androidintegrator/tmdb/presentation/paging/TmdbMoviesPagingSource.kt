@@ -4,7 +4,7 @@ import androidx.paging.*
 import com.mendelin.androidintegrator.tmdb.domain.model.Movie
 import com.mendelin.androidintegrator.tmdb.domain.usecase.GetMoviesNowPlaying
 
-class TmdbMoviesPagingSource(
+internal class TmdbMoviesPagingSource(
     private val getMoviesNowPlaying: GetMoviesNowPlaying,
 ) : PagingSource<Int, Movie>() {
     override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {

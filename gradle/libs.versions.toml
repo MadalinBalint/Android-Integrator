@@ -27,7 +27,7 @@ navigationRuntimeKtx = "2.8.6"
 navigationCompose = "2.8.6"
 pagingCompose = "3.3.5"
 
-apollo = "4.1.0"
+apollo = "4.1.1"
 leakCanary = "2.14"
 mockito = "5.4.0"
 timber = "5.0.1"

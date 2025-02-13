@@ -3,7 +3,7 @@ package com.mendelin.androidintegrator.binance.data.model
 import kotlinx.serialization.*
 
 @Serializable
-data class CryptoAvgPriceDto(
+internal data class CryptoAvgPriceDto(
     @SerialName("e")
     val eventType: String,
     @SerialName("E")

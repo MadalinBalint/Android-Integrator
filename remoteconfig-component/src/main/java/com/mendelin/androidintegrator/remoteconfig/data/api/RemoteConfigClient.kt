@@ -2,7 +2,7 @@ package com.mendelin.androidintegrator.remoteconfig.data.api
 
 import kotlinx.coroutines.flow.Flow
 
-interface RemoteConfigClient {
+internal interface RemoteConfigClient {
     fun getBoolean(key: String): Boolean
     fun getDouble(key: String): Double
     fun getLong(key: String): Long

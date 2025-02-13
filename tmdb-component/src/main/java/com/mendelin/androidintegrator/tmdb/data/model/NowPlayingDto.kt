@@ -3,7 +3,7 @@ package com.mendelin.androidintegrator.tmdb.data.model
 import kotlinx.serialization.*
 
 @Serializable
-data class NowPlayingDto(
+internal data class NowPlayingDto(
     @SerialName("page")
     val page: Int,
     @SerialName("total_pages")
@@ -15,7 +15,7 @@ data class NowPlayingDto(
 )
 
 @Serializable
-data class MovieDto(
+internal data class MovieDto(
     @SerialName("adult")
     val adult: Boolean,
     @SerialName("backdrop_path")

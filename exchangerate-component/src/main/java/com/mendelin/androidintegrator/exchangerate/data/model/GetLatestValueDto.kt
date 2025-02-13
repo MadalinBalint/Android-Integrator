@@ -5,7 +5,7 @@ import nl.adaptivity.xmlutil.serialization.*
 
 @Serializable
 @XmlSerialName("Envelope", "http://www.w3.org/2003/05/soap-envelope", "")
-data class GetLatestValueDto(
+internal data class GetLatestValueDto(
     @SerialName("Body")
     @XmlElement(true)
     val body: SoapBodyDto
@@ -13,7 +13,7 @@ data class GetLatestValueDto(
 
 @Serializable
 @XmlSerialName("Body", "", "")
-data class SoapBodyDto(
+internal data class SoapBodyDto(
     @SerialName("getlatestvalueResponse")
     @XmlElement(true)
     val response: GetLatestValueResponseDto
@@ -21,7 +21,7 @@ data class SoapBodyDto(
 
 @Serializable
 @XmlSerialName("getlatestvalueResponse", "http://www.infovalutar.ro/", "")
-data class GetLatestValueResponseDto(
+internal data class GetLatestValueResponseDto(
     @SerialName("getlatestvalueResult")
     @XmlElement(true) val value: Double
 )
