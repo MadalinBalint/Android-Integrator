@@ -65,14 +65,18 @@ class TmdbViewModelTest {
     @Test
     fun `EXPECT Loading WHEN initial state is changed to Loading`() = runTest {
         viewModel.updateState(TmdbState.Loading)
+
         advanceUntilIdle()
+
         assertEquals(TmdbState.Loading, stateEventObserver.value())
     }
 
     @Test
     fun `EXPECT Refresh WHEN initial state is changed to Refresh`() = runTest {
         viewModel.updateState(TmdbState.Refresh)
+
         advanceUntilIdle()
+
         assertEquals(TmdbState.Refresh, stateEventObserver.value())
     }
 
@@ -87,7 +91,8 @@ class TmdbViewModelTest {
 
     @Test
     fun `EXPECT movie list WHEN getMovies is successful`() = runTest {
-        whenever(getMoviesNowPlaying(any())).thenReturn(AiResult.Success(NOW_PLAYING))
+        whenever(getMoviesNowPlaying(1)).thenReturn(AiResult.Success(NOW_PLAYING))
+        whenever(getMoviesNowPlaying(2)).thenReturn(AiResult.Success(NOW_PLAYING))
         viewModel.getMovies()
 
         advanceUntilIdle()
@@ -106,7 +111,7 @@ class TmdbViewModelTest {
 
     @Test
     fun `EXPECT error WHEN getMoviesNowPlaying fails`() = runTest {
-        whenever(getMoviesNowPlaying(any())).thenReturn(AiResult.Failure("Failure"))
+        whenever(getMoviesNowPlaying(1)).thenReturn(AiResult.Failure("Failure"))
         val pagingSource = TmdbMoviesPagingSource(getMoviesNowPlaying)
 
         val params = PagingSource.LoadParams.Refresh<Int>(
@@ -148,7 +153,6 @@ class TmdbViewModelTest {
             leadingPlaceholderCount = 0
         )
 
-        // Instantiate the PagingSource and invoke getRefreshKey.
         val pagingSource = TmdbMoviesPagingSource(getMoviesNowPlaying)
         val refreshKey = pagingSource.getRefreshKey(pagingState)
 
